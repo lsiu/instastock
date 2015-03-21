@@ -8,6 +8,8 @@ public class CheckoutProduct {
 	private String id;
 
 	private double price;
+	
+	private String description;
 
 	private String sellerCreditCard;
 
