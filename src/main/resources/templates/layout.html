@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" lang="en">
 <head>
     <title>Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <!-- HTML5 shim for IE8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<link rel="stylesheet"
           th:href="@{/css/bootstrap.min.css}"
           href="../../css/bootstrap.min.css"/>
+	<link rel="stylesheet"
+          th:href="@{/css/bootstrap-responsive.min.css}"
+          href="../../css/bootstrap-responsive.min.css"/>
+	<link rel="stylesheet"
+          th:href="@{/css/font-awesome.min.css}"
+          href="../../css/font-awesome.min.css"/>
+	<link rel="stylesheet"
+          th:href="@{/css/bootswatch.css}"
+          href="../../css/bootswatch.css"/>
+          
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script th:src="@{/js/bootwatch.js}" src="../../js/bootwatch.js"></script>
     <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/> -->
 </head>
 <body>
