@@ -12,15 +12,16 @@
     <div class="navbar">
         <div class="navbar-inner">
             <a class="brand"
-               href="https://github.com/ultraq/thymeleaf-layout-dialect">
-                InstaStore
+               href="http://instastore.herokuapp.com">
+               <img class="logo-image" th:src="@{/images/logo.png}" src="../static/logo.png"/>
             </a>
             <ul class="nav">
-                <!--<li>-->
-                    <!--<a th:href="@{/}" href="messages.html">-->
-                        <!--Messages-->
-                    <!--</a>-->
-                <!--</li>-->
+                 <li>
+                    <a th:href="@{/aboutus}" href="messages.html">About us</a>
+                </li>
+                <li>
+                	<a th:href="@{/contactus}" href="contactus.html">Contact us</a>
+                </li>
             </ul>
         </div>
     </div>
