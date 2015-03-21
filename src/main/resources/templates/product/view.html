@@ -7,8 +7,7 @@
 </head>
 <body>
 <h1 layout:fragment="header" th:text="${product.name} + ' - $' + ${product.price}">Coke $0.00</h1>
-<div layout:fragment="content"
-     class="container">
+<div layout:fragment="content" class="container">
     <div class="alert alert-success"
          th:if="${globalMessage}"
          th:text="${globalMessage}">
@@ -22,12 +21,10 @@
             <h3>Description</h3>
             <div th:text="${product.description}">
             This is a soda
-<<<<<<< HEAD
         </div>
-    </div>
-    <div class="row">
-    	<div class="span12 text-right">
-    		<form action="/product/checkout/${product.id}" method="post" >
+    		<p>
+    		<form action="/product/checkout/12345" method="post" >
+    			
     			<input type="hidden" id="id" name="id" th:value="${product.id}"/>
     			 <div class="span10" >
             				Please enter your credit card:
@@ -36,9 +33,9 @@
     			<input type="hidden" id="sellerCreditCard" name="sellerCreditCard" th:value="${product.creditCard}"/>
 				<input type="hidden" id="price" name="price" th:value="${product.price}"/>
 				<input type="submit" name="submit" value="Submit"/>
-    		</form>		
-    	</div>
-
+    		</form>
+    		</p>
+    	</div>    	
     </div>
 </div>
 
