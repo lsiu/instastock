@@ -18,5 +18,7 @@ public class Product {
     
     // base64 encoded image
     private String image;
+    
+    private String creditCard;
 
 }

@@ -1,6 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
       layout:decorator="layout">
+
 <head>
     <title>Product : View</title>
 </head>
@@ -18,6 +19,7 @@
             <img th:src="@{/product/image/} + ${product.id}" src="/images/Diet_coke_can.png"/>
         </div>
     </div>
+    
     <div class="row">
         <div class="span2">
             <h3>Description</h3>
@@ -28,12 +30,14 @@
     </div>
     <div class="row">
     	<div class="span12 text-right">
-    		<form th:action="@{/product/checkout/}" method="post">
+    		<form action="javascript:checkout()" method="post" >
     			<input type="hidden" id="id" name="id" th:value="${product.id}"/>
-    			<input type="image" src="//www.mastercard.com/mc_us/wallet/img/en/HK/mcpp_wllt_btn_chk_147x034px.gif"/>
-    		</form>
+    			<input type="text" value=""/>
+    			<input type="hidden" value="" />
+    		</form>		
     	</div>
     </div>
 </div>
+
 </body>
 </html>

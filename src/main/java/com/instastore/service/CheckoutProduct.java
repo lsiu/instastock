@@ -4,9 +4,13 @@ import lombok.Data;
 
 @Data
 public class CheckoutProduct {
-	
+
 	private String id;
-	
+
 	private double price;
+
+	private String sellerCreditCard;
+
+	private String buyerCreditCard;
 
 }

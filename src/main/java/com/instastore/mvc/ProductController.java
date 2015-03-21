@@ -3,6 +3,7 @@ package com.instastore.mvc;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -28,6 +29,7 @@ import com.instastore.service.CheckoutService;
 @RequestMapping("/product")
 @Slf4j
 public class ProductController {
+	
 	
 	private Map<String, Product> database = new HashMap<>();
 
@@ -65,10 +67,16 @@ public class ProductController {
     private CheckoutService checkoutService;
     
     @RequestMapping(value="checkout/{id}", method=RequestMethod.POST)
-    public ModelAndView checkout(@RequestBody Product product) {
-    	
-    	CheckoutResult result = checkoutService.checkout(new CheckoutProduct());
-    	return null;
-    }
-    
+    public ModelAndView checkout(@RequestBody CheckoutProduct product) {
+    	if(!database.containsKey(product.getId())){    	
+    		return new ModelAndView("error/404");
+    	}
+    	CheckoutResult result = checkoutService.checkout(product);
+    	if(Objects.equals(result.isSuccess(), true)){
+    		database.remove(product.getId());
+    	}else{
+    		return new ModelAndView("error/404");
+    	}
+    	return new ModelAndView("error/404");
+    }    
 }
