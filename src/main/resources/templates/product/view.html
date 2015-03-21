@@ -15,27 +15,22 @@
         Some Success message
     </div>
     <div class="row">
-        <div class="span12" style="text-align: center;">
+        <div class="span6" style="text-align: center;">
             <img th:src="@{/product/image/} + ${product.id}" src="/images/Diet_coke_can.png"/>
         </div>
-    </div>
-    
-    <div class="row">
-        <div class="span2">
+        <div class="span6">
             <h3>Description</h3>
-        </div>
-        <div class="span10" th:text="${product.description}">
+            <div th:text="${product.description}">
             This is a soda
-        </div>
-    </div>
-    <div class="row">
-    	<div class="span12 text-right">
+            </div>
+            <p>
     		<form action="javascript:checkout()" method="post" >
     			<input type="hidden" id="id" name="id" th:value="${product.id}"/>
     			<input type="text" value=""/>
     			<input type="hidden" value="" />
-    		</form>		
-    	</div>
+    		</form>	
+            </p>
+        </div>
     </div>
 </div>
 
