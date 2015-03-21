@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>Product : View</title>
+</head>
+<body>
+<h1 layout:fragment="header" th:text="${product.name}">Coke</h1>
+<div layout:fragment="content"
+     class="container">
+    <div class="alert alert-success"
+         th:if="${globalMessage}"
+         th:text="${globalMessage}">
+        Some Success message
+    </div>
+    <div class="row">
+        <div class="span12" style="text-align: center;">
+            <img th:src="@{/images/} + ${product.id}" src="/images/Diet_coke_can.png"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span2">
+            Description
+        </div>
+        <div class="span10" th:text="${product.description}">
+            This is a soda
+        </div>
+    </div>
+</div>
+</body>
+</html>
