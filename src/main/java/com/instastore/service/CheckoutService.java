@@ -34,7 +34,7 @@ public class CheckoutService {
 		byte[] encoded;
 		try {
 			Random random=new Random();
-			long transactionNumber=random.nextInt(1000000000)+4000000000000000000L;
+			long transactionNumber=random.nextInt(2000000000)+8000000000000000000L;
 			HttpPost httpPost = new HttpPost(
 					"http://dmartin.org:8021/moneysend/v2/transfer");
 			
