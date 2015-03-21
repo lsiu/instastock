@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TransferRequest>
+    <LocalDate>0612</LocalDate>
+    <LocalTime>161222</LocalTime>
+    <TransactionReference>{transaction_reference}</TransactionReference>
+    <SenderName>John Doe</SenderName>
+    <SenderAddress>
+        <Line1>123 Main Street</Line1>
+        <Line2>#5A</Line2>
+        <City>Arlington</City>
+        <CountrySubdivision>VA</CountrySubdivision>
+        <PostalCode>22207</PostalCode>
+        <Country>USA</Country>
+    </SenderAddress>
+    <FundingCard>
+        <AccountNumber>{funding_account_number}</AccountNumber>
+        <ExpiryMonth>11</ExpiryMonth>
+        <ExpiryYear>2017</ExpiryYear>
+    </FundingCard>
+    <FundingUCAF>MjBjaGFyYWN0ZXJqdW5rVUNBRjU=1111</FundingUCAF>
+    <FundingAmount>
+         <Value>{price}</Value>
+        <Currency>344</Currency>
+    </FundingAmount>
+    <ReceiverName>Jose Lopez</ReceiverName>
+    <ReceiverAddress>
+        <Line1>Pueblo Street</Line1>
+        <Line2>PO BOX 12</Line2>
+        <City>El PASO</City>
+        <CountrySubdivision>TX</CountrySubdivision>
+        <PostalCode>79906</PostalCode>
+        <Country>USA</Country>
+    </ReceiverAddress>
+    <ReceiverPhone>1800639426</ReceiverPhone>
+    <ReceivingCard>
+        <AccountNumber>{receiving_card}</AccountNumber>
+    </ReceivingCard>
+    <ReceivingAmount>
+        <Value>{price}</Value>
+        <Currency>344</Currency>
+    </ReceivingAmount>
+    <Channel>W</Channel>
+    <UCAFSupport>true</UCAFSupport>
+    <ICA>009674</ICA>
+    <ProcessorId>9000000442</ProcessorId>
+    <RoutingAndTransitNumber>990442082</RoutingAndTransitNumber>
+    <CardAcceptor>
+        <Name>My Local Bank</Name>
+        <City>Saint Louis</City>
+        <State>MO</State>
+        <PostalCode>63101</PostalCode>
+        <Country>USA</Country>
+    </CardAcceptor>
+    <TransactionDesc>P2P</TransactionDesc>
+    <MerchantId>123456</MerchantId>
+</TransferRequest>
