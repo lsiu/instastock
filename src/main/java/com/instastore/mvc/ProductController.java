@@ -74,9 +74,9 @@ public class ProductController {
     	CheckoutResult result = checkoutService.checkout(product);
     	if(Objects.equals(result.isSuccess(), true)){
     		database.remove(product.getId());
+    		return new ModelAndView("success/200");
     	}else{
     		return new ModelAndView("error/404");
     	}
-    	return new ModelAndView("error/404");
     }    
 }

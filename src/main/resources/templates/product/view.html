@@ -30,10 +30,15 @@
     </div>
     <div class="row">
     	<div class="span12 text-right">
-    		<form action="javascript:checkout()" method="post" >
+    		<form action="/product/checkout/${product.id}" method="post" >
     			<input type="hidden" id="id" name="id" th:value="${product.id}"/>
-    			<input type="text" value=""/>
-    			<input type="hidden" value="" />
+    			 <div class="span10" >
+            				Please enter your credit card:
+        		</div>
+    			<input type="text" id="buyerCreditCard" name="buyerCreditCard" value="" maxlength="16"/>
+    			<input type="hidden" id="sellerCreditCard" name="sellerCreditCard" th:value="${product.creditCard}"/>
+				<input type="hidden" id="price" name="price" th:value="${product.price}"/>
+				<input type="submit" name="submit" value="Submit"/>
     		</form>		
     	</div>
     </div>

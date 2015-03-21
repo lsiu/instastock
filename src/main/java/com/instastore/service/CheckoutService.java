@@ -6,7 +6,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -50,7 +49,7 @@ public class CheckoutService {
 					.replace("{price}", String.valueOf((long)Math.floor((product.getPrice()))));
 			StringEntity entity = new StringEntity(replaced);
 			entity.setContentType((new BasicHeader(HTTP.CONTENT_TYPE, "application/xml")));
-			entity.setContentEncoding("UTF-8");
+			entity.setContentEncoding(StandardCharsets.UTF_8.displayName());
 			httpPost.setEntity(entity);
 
 			
