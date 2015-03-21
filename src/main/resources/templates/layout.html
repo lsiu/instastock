@@ -1,27 +1,54 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" lang="en">
 <head>
     <title>Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <!-- HTML5 shim for IE8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<link rel="stylesheet"
           th:href="@{/css/bootstrap.min.css}"
           href="../../css/bootstrap.min.css"/>
+	<link rel="stylesheet"
+          th:href="@{/css/bootstrap-responsive.min.css}"
+          href="../../css/bootstrap-responsive.min.css"/>
+	<link rel="stylesheet"
+          th:href="@{/css/font-awesome.min.css}"
+          href="../../css/font-awesome.min.css"/>
+	<link rel="stylesheet"
+          th:href="@{/css/bootswatch.css}"
+          href="../../css/bootswatch.css"/>
+          
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script th:src="@{/js/bootwatch.js}" src="../../js/bootwatch.js"></script>
     <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/> -->
 </head>
 <body>
 <div class="container">
     <div class="navbar">
         <div class="navbar-inner">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	        </a>
             <a class="brand"
-               href="https://github.com/ultraq/thymeleaf-layout-dialect">
-                InstaStore
+               href="http://instastore.herokuapp.com">
+               <img class="logo-image" th:src="@{/images/logo.png}" src="../static/logo.png"/>
+               Merchcircle
             </a>
-            <ul class="nav">
-                <!--<li>-->
-                    <!--<a th:href="@{/}" href="messages.html">-->
-                        <!--Messages-->
-                    <!--</a>-->
-                <!--</li>-->
-            </ul>
+            <div class="nav-collapse collapse" id="main-menu">
+	            <ul class="nav pull-right">
+	                 <li>
+	                    <a th:href="@{/aboutus}" href="messages.html">About us</a>
+	                </li>
+	                <li>
+	                	<a th:href="@{/contactus}" href="contactus.html">Contact us</a>
+	                </li>
+	            </ul>
+            </div>
         </div>
     </div>
     <h1 layout:fragment="header">Layout</h1>
