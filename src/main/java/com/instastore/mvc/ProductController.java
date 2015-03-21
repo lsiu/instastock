@@ -6,6 +6,7 @@ import java.util.Map;
 
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.instastore.service.CheckoutProduct;
+import com.instastore.service.CheckoutResult;
+import com.instastore.service.CheckoutService;
 
 /**
  * Created by lsiu on 3/21/2015.
@@ -54,6 +59,16 @@ public class ProductController {
 	    	return ResponseEntity.ok().contentType(MediaType.parseMediaType("image/png"))
 	    			.body(Base64.getDecoder().decode(product.getImage()));
     	}
+    }
+    
+    @Autowired
+    private CheckoutService checkoutService;
+    
+    @RequestMapping(value="checkout/{id}", method=RequestMethod.POST)
+    public ModelAndView checkout(@RequestBody Product product) {
+    	
+    	CheckoutResult result = checkoutService.checkout(new CheckoutProduct());
+    	return null;
     }
     
 }

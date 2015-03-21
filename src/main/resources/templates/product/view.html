@@ -5,7 +5,7 @@
     <title>Product : View</title>
 </head>
 <body>
-<h1 layout:fragment="header" th:text="${product.name}">Coke</h1>
+<h1 layout:fragment="header" th:text="${product.name} + ' - $' + ${product.price}">Coke $0.00</h1>
 <div layout:fragment="content"
      class="container">
     <div class="alert alert-success"
@@ -20,11 +20,19 @@
     </div>
     <div class="row">
         <div class="span2">
-            Description
+            <h3>Description</h3>
         </div>
         <div class="span10" th:text="${product.description}">
             This is a soda
         </div>
+    </div>
+    <div class="row">
+    	<div class="span12 text-right">
+    		<form th:action="@{/product/checkout/}" method="post">
+    			<input type="hidden" id="id" name="id" th:value="${product.id}"/>
+    			<input type="image" src="//www.mastercard.com/mc_us/wallet/img/en/HK/mcpp_wllt_btn_chk_147x034px.gif"/>
+    		</form>
+    	</div>
     </div>
 </div>
 </body>
