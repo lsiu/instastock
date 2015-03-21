@@ -29,18 +29,26 @@
 <div class="container">
     <div class="navbar">
         <div class="navbar-inner">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	        </a>
             <a class="brand"
                href="http://instastore.herokuapp.com">
                <img class="logo-image" th:src="@{/images/logo.png}" src="../static/logo.png"/>
+               Merchcircle
             </a>
-            <ul class="nav">
-                 <li>
-                    <a th:href="@{/aboutus}" href="messages.html">About us</a>
-                </li>
-                <li>
-                	<a th:href="@{/contactus}" href="contactus.html">Contact us</a>
-                </li>
-            </ul>
+            <div class="nav-collapse collapse" id="main-menu">
+	            <ul class="nav pull-right">
+	                 <li>
+	                    <a th:href="@{/aboutus}" href="messages.html">About us</a>
+	                </li>
+	                <li>
+	                	<a th:href="@{/contactus}" href="contactus.html">Contact us</a>
+	                </li>
+	            </ul>
+            </div>
         </div>
     </div>
     <h1 layout:fragment="header">Layout</h1>
