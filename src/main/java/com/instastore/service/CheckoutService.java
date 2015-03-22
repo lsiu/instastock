@@ -10,6 +10,7 @@ import java.util.Random;
 import lombok.extern.slf4j.Slf4j;
 
 import org.apache.catalina.connector.Response;
+import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
@@ -47,6 +48,7 @@ public class CheckoutService {
 					product.getBuyerCreditCard())
 					.replace("{receiving_card}", product.getSellerCreditCard())
 					.replace("{price}", String.valueOf((long)Math.floor((product.getPrice()))));
+			log.debug("Sending checkout request to MasterPass: {}", replaced);
 			StringEntity entity = new StringEntity(replaced);
 			entity.setContentType((new BasicHeader(HTTP.CONTENT_TYPE, "application/xml")));
 			entity.setContentEncoding(StandardCharsets.UTF_8.displayName());
@@ -62,6 +64,7 @@ public class CheckoutService {
 			} else {
 				log.info("Response of send money is {}",
 						response.getStatusLine());
+				log.info("Response body: {}", IOUtils.toString(response.getEntity().getContent()));
 				ResponseHandler<String> handler = new BasicResponseHandler();
 				log.info(handler.handleResponse(response));
 				CheckoutResult checkoutResult = new CheckoutResult();
