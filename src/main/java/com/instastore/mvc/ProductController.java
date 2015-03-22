@@ -82,7 +82,7 @@ public class ProductController {
     		database.remove(product.getId());
     		return new ModelAndView("success/200");
     	}else{
-    		return new ModelAndView("error/404");
+    		return new ModelAndView("error/404", "globalMessage", result.getMessage());
     	}
     }
     

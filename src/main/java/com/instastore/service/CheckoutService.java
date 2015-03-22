@@ -64,17 +64,18 @@ public class CheckoutService {
 			} else {
 				log.info("Response of send money is {}",
 						response.getStatusLine());
-				log.info("Response body: {}", IOUtils.toString(response.getEntity().getContent()));
-				ResponseHandler<String> handler = new BasicResponseHandler();
-				log.info(handler.handleResponse(response));
+				String responseBody = IOUtils.toString(response.getEntity().getContent());
+				log.info("Response body: {}", responseBody);
 				CheckoutResult checkoutResult = new CheckoutResult();
 				checkoutResult.setSuccess(false);
+				checkoutResult.setMessage(responseBody);
 				return checkoutResult;
 			}
 		} catch (IOException e) {
 			log.error("Error in sending money {}", e);
 			CheckoutResult checkoutResult = new CheckoutResult();
 			checkoutResult.setSuccess(false);
+			checkoutResult.setMessage(e.getMessage());
 			return checkoutResult;
 		}
 	}

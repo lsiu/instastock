@@ -9,7 +9,11 @@
 <h1>404 - Not Found</h1>
 </div>
 <div layout:fragment="content" class="container">
-Not found
+    <div class="alert alert-success"
+         th:if="${globalMessage}"
+         th:text="${globalMessage}">
+        Some Success message
+    </div>
 </div>
 </body>
 
