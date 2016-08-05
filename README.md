@@ -1,3 +1,7 @@
+#Background
+
+Project for the MasterCard Masters of Code Hackathon in March 22nd 2015
+
 #Instastore
 
 Sell your stuff quickly
